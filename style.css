@@ -1,0 +1,317 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #f4f4f4;
+}
+.page{
+    width: 1000px;
+    margin: 0 auto;
+ 
+}
+.page .chat{
+    position: relative;
+}
+.page .chat img{
+    width: 1000px;
+}
+.page .chat .picture{
+    margin-top: 20px;
+    display: none;
+}
+.page .chat .active{
+    display: block;
+}
+.page .chat .dot{
+    width: 33px;
+    height: 8px;
+    background-color: #f4f4f4;
+    position: absolute;
+    bottom: 43px;
+}
+.page .chat .dot1{
+    left: 41px;
+}
+.page .chat .dot2{
+    left: 80px;
+}
+.page .chat .dot3{
+    left: 118px;
+}
+.page .chat .dot4{
+    left: 156px;
+}
+.page .chat .dot5{
+    left: 196px;
+}
+.page .chat .dotActive{
+    background-color: #ff6a00;
+}
+
+.main{
+    padding-top: 20px;
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.main .left{
+    display: flex;
+    background-color: white;
+}
+.main .left>div{
+    width: 240px;
+    height: 200px;
+    margin: 40px 0 40px 0;
+    border-left: 1px solid #f4f4f4;
+}
+.main .left>div:first-of-type{
+    border-left: none;
+}
+
+.main .right{
+    background-color: white;
+    width: 240px;
+}
+
+.mainDiv{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.page>.mainActive{
+    display: flex;
+}
+.mainDiv .mainLogin{
+    width: 600px;
+    height: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.mainDiv .mainLogin .X{
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 15px;
+    line-height: 10px;
+    border: 1px solid #9b9ea0;
+    color: #9b9ea0;
+    padding:0 2px;
+    z-index: 1;
+}
+
+.mainDiv .mainLogin .up{
+    font-size: 18px;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: 130px;
+    margin-bottom: 30px;
+}
+.mainDiv .mainLogin .mid input{
+    border-color: rbg(238,238,238);
+    width: 330px;
+    height: 42px;
+    margin: 10px 0;
+    padding-left: 10px;
+    outline: none;
+}
+
+
+.mainDiv .mainLogin .mid .goLogin{
+    width: 344px;
+    height: 46px;
+    background-color: #ff6300;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainDiv .mainLogin .down{
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+    margin-right: 130px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #9b9ea0;
+}
+.mainDiv .mainLogin .down>div{
+    margin-left: 10px;
+}
+
+.main .right .img{
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+.main .right{
+    font-size: 14px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 20px;
+    height: 280px;
+}
+.main .right .img img{
+    height: 100%;
+}
+.main .right .action{
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 10px;
+}
+.main .right .text{
+    margin-top: 10px;
+}
+.main .right .login{
+    background-color: #ff6a00;
+    width: 74px;
+    height: 34px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.main .right .resject{
+    background-color: white;
+    border: 1px solid #ff6a00;
+    width: 72px;
+    height: 32px;
+    color: #ff6a00;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main .foot{
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-self: flex-end;
+    justify-content: center;
+    border-top: #f4f4f4 2px solid;
+}
+.main .foot a{
+    color: #ff6a00;
+}
+
+
+
+.main .right2{
+    background-color: white;
+    width: 240px;
+    font-size: 14px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    height: 280px;
+}
+.main .right2 .up{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #ff6a00;
+}
+
+.main .right2 .up .img{
+    overflow: hidden;
+    margin-top: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+.main .right2 .up .img img{
+    width: 100%;
+}
+.main .right2 .up .text{
+    font-size: 16px;
+    color: black;
+    margin: 5px 0;
+}
+.main .right2 .up .control{
+    padding: 2px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff6a00;
+}
+.main .right2 .up .title{
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom:10px;
+    border-bottom: 2px #f4f4f4 solid; 
+}
+.main .right2 .up .title>span{
+    padding-left: 130px;
+}
+
+.main .right2 .down{
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.main .right2 .down>div{
+    width: 80px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0a0;
+}
+.main .right2 .down>div .value{
+    color: #ff6a00;
+    font-size: 18px;
+}
+
+
+
+.page .main .hidden{
+    display: none;
+}
+
+.mainDiv .mainLogin .mid .Err{
+    font-size: 12px;
+    color: red;
+}
+.page .chat .dot:hover{
+    cursor: pointer;
+}
+.page .mainDiv .X:hover{
+    cursor: pointer;
+}
+.page .mainDiv .mid .goLogin:hover{
+    cursor: pointer;
+}
+.page .main .right .login:hover{
+    cursor: pointer;
+}
+.page .main .right .resject:hover{
+    cursor: pointer;
+}

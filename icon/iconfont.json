@@ -1,0 +1,16 @@
+{
+  "id": "1471735",
+  "name": "ajax",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3849624",
+      "name": "警告",
+      "font_class": "jinggao",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}
