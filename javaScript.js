@@ -124,7 +124,7 @@ function handing(res){
 function tryAsk(token){
     $.ajax({
         type:'get',
-        url:'http:playground.it266.com/profile?token='+token,
+        url:'http:playground.it266.com/pprofile?token='+token,
         dataType:'json',
         error:resErr,
         success:resSuccess,
@@ -132,7 +132,7 @@ function tryAsk(token){
 }
 function resErr(XMLHttpRequest, textStatus){
     goToLogin();
-    alert(XMLHttpRequest.responseText);
+    alert(textStatus+':'+XMLHttpRequest.responseText);
     $('.mid .userErr').html(`<i class="iconfont">&#xe613;</i> please wait a little and try again`);
 }
 function resSuccess(data){
