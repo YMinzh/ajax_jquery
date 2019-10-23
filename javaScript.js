@@ -32,11 +32,15 @@ window.onload=function(){
     //登录界面的出现和退出
 
     $('.main .login').click(function(){
+        userRight();
+        passwordRight();
         $('.mainDiv').addClass('mainActive');
     });
 
     $('.X').click(function(){
         $('.mainDiv').removeClass('mainActive');
+        $('#username').val('');
+        $('#password').val('');
     })
     //登录框验证
     $('#username').blur(function(){
@@ -120,6 +124,10 @@ function tryAsk(token){
     $.getJSON('http://playground.it266.com/profile?token='+token,null,function(json){
         if(json.status==true){
             load(json);
+        }else{
+            window.localStorage.removeItem('token');
+            json.data='系统繁忙,请稍后重试';
+            userpassErr(json)
         }
     });
 }
