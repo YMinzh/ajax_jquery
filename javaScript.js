@@ -31,11 +31,7 @@ window.onload=function(){
     });
     //登录界面的出现和退出
 
-    $('.main .login').click(function(){
-        userRight();
-        passwordRight();
-        $('.mainDiv').addClass('mainActive');
-    });
+    $('.main .login').click(this.goToLogin);
 
     $('.X').click(function(){
         $('.mainDiv').removeClass('mainActive');
@@ -62,6 +58,11 @@ window.onload=function(){
     $('.goLogin').click(getToken)
 
 };
+function goToLogin(){
+    userRight();
+    passwordRight();
+    $('.mainDiv').addClass('mainActive');
+}
 
 function getToken(){
     var res;
@@ -109,7 +110,7 @@ function handing(res){
     var resJson=JSON.parse(resStr);
     var status = resJson.status;
     //判断返回能容是否为正确的  正确进行登录  错误重新输入
-    if(status==true){   
+    if(status){   
         token = resJson.data.token;
         window.localStorage.setItem('token',token);
         tryAsk(token);
@@ -121,16 +122,43 @@ function handing(res){
 }
 //登录 
 function tryAsk(token){
-    $.getJSON('http://playground.it266.com/profile?token='+token,null,function(json){
-        if(json.status==true){
-            load(json);
-        }else{
-            window.localStorage.removeItem('token');
-            json.data='系统繁忙,请稍后重试';
-            userpassErr(json)
-        }
-    });
+    $.ajax({
+        type:'get',
+        url:'http:playground.it266.com/profile?token='+token,
+        dataType:'json',
+        error:resErr,
+        success:resSuccess,
+    })
 }
+function resErr(XMLHttpRequest, textStatus){
+    goToLogin();
+    alert(XMLHttpRequest.responseText);
+    $('.mid .userErr').html(`<i class="iconfont">&#xe613;</i> please wait a little and try again`);
+}
+function resSuccess(data){
+    if(data.status){
+        load(data);
+    }else{
+        errHanding(data);
+    }
+}
+
+function errHanding(data){
+    if(data.data=='INVALID_TOKEN'){
+        window.localStorage.removeItem('token');
+        if(!$('#password').val()){
+            goToLogin();
+            $('.mid .userErr').html(`<i class="iconfont">&#xe613;</i> 登录已失效  请重新登录`);
+        }else{
+            data.data="服务器繁忙  请稍后重试"
+            userpassErr(json);
+        }
+    }else{
+        alert(data.data+'  请重新登录');
+        goToLogin();
+    }
+}
+
 //////////////////////////////////////////////////////////////////////////
 //加载取得的数据
 function load(json){
